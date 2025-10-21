@@ -25,9 +25,7 @@
 .ar-title {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #2B73D2 0%, #58B24C 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #2B73D2;
   margin: 0 0 0.5rem 0;
 }
 
@@ -260,6 +258,240 @@
 .ar-action-btn.ar-reject:hover {
     background: #ef4444;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Loading State */
+.ar-loading {
+    text-align: center;
+    color: #2B73D2;
+    font-size: 1.1rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    border: 2px dashed #2B73D2;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Domain Comparison */
+.ar-domain-comparison {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 4px solid #2B73D2;
+}
+
+.ar-domain-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+    gap: 1rem;
+}
+
+.ar-domain-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.ar-domain-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.ar-domain-value.ar-match {
+    color: #00CC66;
+}
+
+.ar-domain-value.ar-no-match {
+    color: #ef4444;
+}
+
+/* Mismatch Card Highlight */
+.ar-subscription-card.ar-mismatch {
+    border-color: #FFA500;
+    background: #FFF9F0;
+}
+
+.ar-subscription-card.ar-mismatch:hover {
+    border-color: #FF8C00;
+    background: #FFF5E6;
+}
+
+/* Warning Message */
+.ar-warning {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+    border: 2px solid #FF9800;
+    border-radius: 8px;
+    color: #E65100;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Rejection Reason Display */
+.ar-rejection-reason {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: #FFEBEE;
+    border: 2px solid #EF5350;
+    border-radius: 8px;
+    color: #C62828;
+    font-size: 0.85rem;
+}
+
+.ar-rejection-reason strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Modal Styles */
+.ar-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.ar-modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.ar-modal-title {
+    font-size: 1.5rem;
+    color: #2B73D2;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.ar-modal-user-info {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #2B73D2;
+}
+
+.ar-modal-user-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.ar-modal-user-info strong {
+    color: #2B73D2;
+    font-weight: 600;
+}
+
+.ar-modal-form {
+    margin-bottom: 1.5rem;
+}
+
+.ar-modal-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2B73D2;
+    margin-bottom: 0.5rem;
+}
+
+.ar-modal-select,
+.ar-modal-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.ar-modal-select:focus,
+.ar-modal-textarea:focus {
+    outline: none;
+    border-color: #2B73D2;
+    box-shadow: 0 0 0 3px rgba(43, 115, 210, 0.1);
+}
+
+.ar-modal-textarea {
+    margin-top: 0.75rem;
+    resize: vertical;
+}
+
+.ar-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.ar-modal-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ar-modal-btn.ar-cancel {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.ar-modal-btn.ar-cancel:hover {
+    background: #cbd5e0;
+    transform: translateY(-2px);
+}
+
+.ar-modal-btn.ar-confirm-reject {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.ar-modal-btn.ar-confirm-reject:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }

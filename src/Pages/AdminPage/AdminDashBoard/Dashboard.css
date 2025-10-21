@@ -208,9 +208,7 @@
     font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #2B73D2 0%, #58B24C 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #2B73D2;
 }
 
 .subtitle {

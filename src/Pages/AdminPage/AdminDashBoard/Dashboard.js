@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ApproveRejectSubscription from "../ApproveReject/ApproveRejectSubscription";
 import { DomainManagement } from "../DomainManagement/DomainManagement";
+import { FilePathManagement } from "../FilePathManagement/FilePathManagement";
+import { UserGroupAccess } from "../UserGroupAccess/UserGroupAccess";
 import './Dashboard.css';
 import AuditLogs from "../AuditLog/AuditLogs";
 import { LogOut } from 'lucide-react'
@@ -34,8 +36,9 @@ export default function Dashboard({ navigate }) {
         { name: "Dashboard", icon: "", view: "dashboard" },
         { name: "Approve/Reject Subscription", icon: "", view: "approve" },
         { name: "Domain Management", icon: "", view: "domains" },
-        { name: "Logs", icon: "", view: "logs" },
-        { name: "Settings", icon: "", view: "settings" }
+        { name: "File Path Management", icon: "", view: "filepaths" },
+        { name: "User Group Access", icon: "", view: "usergroups" },
+        { name: "Logs", icon: "", view: "logs" }
     ];
 
     const domains = [
@@ -47,8 +50,9 @@ export default function Dashboard({ navigate }) {
     const renderContent = () => {
         if (view == 'approve') return <ApproveRejectSubscription />;
         if (view == 'domains') return <DomainManagement />;
+        if (view == 'filepaths') return <FilePathManagement />;
+        if (view == 'usergroups') return <UserGroupAccess />;
         if (view == 'logs') return <AuditLogs />;
-        if (view == 'settings') return <><h1>Settings</h1><p className="subtitle">Configure settings</p></>;
 
 
         return <>
