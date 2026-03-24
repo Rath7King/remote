@@ -1,0 +1,169 @@
+/* ===== Aspire FinSight MFU Dashboard Styles ===== */
+
+.mfuPage {
+    background: #f0f4f8 !important;
+}
+
+.mfuWrapper {
+    padding: 0;
+    min-height: 100vh;
+    background: #f0f4f8;
+}
+
+/* === Header === */
+.mfuHeader {
+    background: #ffffff;
+    padding: 12px 20px;
+    border-bottom: 3px solid #00c9a7;
+}
+
+.brandingBox {
+    line-height: 1;
+}
+
+.aspireBrand {
+    color: #9ab0c8 !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.finSightBrand {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+}
+
+.finSightBrand .finPart {
+    color: #0a2540 !important;
+}
+
+.finSightBrand .sightPart {
+    color: #00c9a7 !important;
+}
+
+.dateBox {
+    background: #f0f4f8;
+    border: 1px solid #d4dde9;
+    border-radius: 6px;
+    padding: 5px 12px;
+    gap: 6px;
+}
+
+.calIcon {
+    color: #5a7a9a !important;
+    font-size: 14px !important;
+}
+
+.dateLabel {
+    color: #5a7a9a !important;
+    font-size: 10px !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-right: 4px;
+}
+
+.dateValue {
+    color: #0a2540 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+/* === Dashboard Title === */
+.dashboardTitle {
+    background: #e8eef5;
+    color: #0a2540 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    padding: 12px 20px !important;
+    border-left: 4px solid #00c9a7;
+    letter-spacing: 0.3px;
+    display: block;
+}
+
+/* === Main Content === */
+.dashboardContent {
+    padding: 16px;
+    gap: 16px;
+    flex: 1;
+}
+
+/* === KPI Column === */
+.kpiColumn {
+    width: 280px;
+    min-width: 260px;
+    gap: 12px;
+}
+
+.kpiCard {
+    background: #ffffff;
+    border: 1px solid #dde5ef;
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
+    border-left: 3px solid #1a4a7a;
+    flex: 1;
+    transition: box-shadow 0.2s;
+}
+
+.kpiCard:hover {
+    box-shadow: 0 4px 16px rgba(10, 37, 64, 0.15);
+}
+
+.kpiLabel {
+    color: #5a7a9a !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.kpiValue {
+    color: #00c9a7 !important;
+    font-size: 36px !important;
+    font-weight: 800 !important;
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.kpiDash {
+    color: #9ab0c8 !important;
+}
+
+.kpiSubLabel {
+    color: #9ab0c8 !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+}
+
+/* === Chart Area === */
+.chartArea {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #dde5ef;
+    box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
+    padding: 16px;
+}
+
+.chartTitle {
+    color: #0a2540 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    display: block;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e8eef5;
+    letter-spacing: 0.2px;
+}
+
+.mfuChart {
+    border: none !important;
+}

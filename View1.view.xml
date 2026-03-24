@@ -1,0 +1,121 @@
+<mvc:View
+    controllerName="sampleapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:vizFrame="sap.viz.ui5.controls"
+    xmlns:vizData="sap.viz.ui5.data"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page showHeader="false" backgroundDesign="Solid" class="mfuPage">
+        <content>
+            <VBox class="mfuWrapper">
+
+                <!-- Header Bar -->
+                <HBox justifyContent="SpaceBetween" alignItems="Center" class="mfuHeader">
+                    <VBox>
+                        <HBox alignItems="Center">
+                            <core:Icon src="sap-icon://activity-2" class="finSightIcon"/>
+                            <VBox class="brandingBox">
+                                <Text text="Aspire" class="aspireBrand"/>
+                                <Text text="FinSight" class="finSightBrand"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <HBox alignItems="Center" class="dateBox">
+                        <core:Icon src="sap-icon://calendar" class="calIcon"/>
+                        <Text text="CREATEDAT" class="dateLabel"/>
+                        <Text text="{/createdAt}" class="dateValue"/>
+                    </HBox>
+                </HBox>
+
+                <!-- Dashboard Title -->
+                <Text text="MFU Dashboard" class="dashboardTitle"/>
+
+                <!-- Main Content Area -->
+                <HBox class="dashboardContent" alignItems="Stretch">
+
+                    <!-- KPI Cards Column -->
+                    <VBox class="kpiColumn">
+
+                        <!-- KPI Card 1 -->
+                        <VBox class="kpiCard">
+                            <Text text="Total MFU Uploaded" class="kpiLabel"/>
+                            <Text text="{/totalMFUUploaded}" class="kpiValue"/>
+                            <Text text="MFU_COUNT" class="kpiSubLabel"/>
+                        </VBox>
+
+                        <!-- KPI Card 2 -->
+                        <VBox class="kpiCard">
+                            <Text text="Total MFU Approved" class="kpiLabel"/>
+                            <Text text="{/totalMFUApproved}" class="kpiValue"/>
+                            <Text text="MFU_COUNT" class="kpiSubLabel"/>
+                        </VBox>
+
+                        <!-- KPI Card 3 -->
+                        <VBox class="kpiCard">
+                            <Text text="MFU Template Onboarded" class="kpiLabel"/>
+                            <Text text="{/totalMFUTemplateOnboarded}" class="kpiValue"/>
+                            <Text text="MFU_COUNT" class="kpiSubLabel"/>
+                        </VBox>
+
+                        <!-- KPI Card 4 -->
+                        <VBox class="kpiCard">
+                            <Text text="Total MFU Rejected" class="kpiLabel"/>
+                            <Text text="{/totalMFURejected}" class="kpiValue kpiDash"/>
+                            <Text text="MFU_COUNT" class="kpiSubLabel"/>
+                        </VBox>
+
+                    </VBox>
+
+                    <!-- Chart Area -->
+                    <VBox class="chartArea">
+                        <Text text="MFU Templates by Modules" class="chartTitle"/>
+                        <viz:VizFrame
+                            id="mfuBarChart"
+                            vizType="stacked_bar"
+                            width="100%"
+                            height="280px"
+                            class="mfuChart">
+                            <viz:dataset>
+                                <vizData:FlattenedDataset
+                                    data="{/barChartData}">
+                                    <vizData:dimensions>
+                                        <vizData:DimensionDefinition
+                                            name="Module"
+                                            value="{module}"/>
+                                    </vizData:dimensions>
+                                    <vizData:measures>
+                                        <vizData:MeasureDefinition
+                                            name="Approved"
+                                            value="{approved}"/>
+                                        <vizData:MeasureDefinition
+                                            name="Pending"
+                                            value="{pending}"/>
+                                        <vizData:MeasureDefinition
+                                            name="Uploaded"
+                                            value="{uploaded}"/>
+                                    </vizData:measures>
+                                </vizData:FlattenedDataset>
+                            </viz:dataset>
+                            <viz:feeds>
+                                <vizFrame:FeedItem
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="Approved,Pending,Uploaded"/>
+                                <vizFrame:FeedItem
+                                    uid="categoryAxis"
+                                    type="Dimension"
+                                    values="Module"/>
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </VBox>
+
+                </HBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
